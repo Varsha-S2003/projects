@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+  
+
+  <header class="user_header">
+    <div class="header_1">
+      <div class="user_flex">
+        <div class="logo_cont">
+          <img src="book_logo.png" alt="">
+  
+          <a href="home.html" class="book_logo">Bookiee</a>
+        </div>
+  
+  
+        <nav class="navbar">
+          <a href="home.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="shop.html">Shop</a>
+          <a href="contact.html">Contact</a>
+          <a href="orders.html">Orders</a>
+        </nav>
+  
+        <div class="last_part">
+          <div class="loginorreg">
+            <p>New <a href="login.html">Login</a> | <a href="register.html">Register</a></p>
+          </div>
+  
+          <div class="icons">
+          <!-- <i class="fa-solid fa-magnifying-glass"></i>
+            <a class="fa-solid fa-magnifying-glass" href="search_page.html"></a> -->
+            <button type="button" class="btn btn-primary-toggle-button">
+              <i class="fa fa-toggle-on"></i>
+            </button>
+  
+            <div class="fas fa-user" id="user_btn"></div>
+  
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i><span class="quantity"></span></a>
+  
+            <div class="fas fa-bars" id="user_menu_btn"></div>
+  
+          </div>
+  
+        </div>
+        <div class="header_acc_box">
+          <a href="logout.html" class="delete-btn">Logout</a>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </header>
+<script>
+  $('.toggle-button').click(function(){
+    $(this).toggleClass('active');
+    $(this).find("i").toggleClass('fa-toggle-on fa-toggle-off');
+  });
+</script>
+
+  <section class="home_cont">
+    <div class="main_descrip">
+      <h1>The Bookshelf</h1>
+      <p>Explore, Discover, and Buy Your Favorite Books</p>
+      <button>Discover More</button>
+    </div>
+  </section>
+
+  <section class="products_cont">
+    <div class="pro_box_cont">
+      
+         
+            <img src="E:\book\uploaded_img\book1.jpg" alt="" width="" value="img1">
+
+    </div>
+    <div class="pro_box_cont">
+        <img src="E:\book\uploaded_img\book7.jpg" >
+       
+</div>
+<div class="pro_box_cont">
+    <img src="E:\book\uploaded_img\book2.jpg" >
+    
+</div>
+<div class="pro_box_cont">
+    <img src="E:\book\uploaded_img\book3.jpg" >
+</div>
+<div class="pro_box_cont">
+    <img src="E:\book\uploaded_img\book5.jpg" >
+</div>
+<div class="pro_box_cont">
+    <img src="E:\book\uploaded_img\book4.jpg" >
+</div>
+<div class="pro_box_cont" style="width: 100px;">
+  <form action="shop.html" >
+<input type="submit" value="SHOP NOW" name="shopnow" class="product_btn">
+
+</form>
+</div>
+  </section>
+
+  <section class="about_cont">
+    <img src="about.jpg" alt="">
+    <div class="about_descript">
+      <h2>Discover Our Story</h2>
+      <p>At Bookiee, we are passionate about connecting readers with captivating stories, inspiring ideas, and a world of knowledge. Our bookstore is more than just a place to buy books; it's a haven for book enthusiasts, where the love for literature thrives.
+    </p>
+    <button class="product_btn" onclick="window.location.href='about.html';">Read More</button>
+    </div>
+  </section>
+
+  <section class="questions_cont">
+    <div class="questions">
+    <h2>Have Any Queries?</h2>
+    <p>At Bookiee, we value your satisfaction and strive to provide exceptional customer service. If you have any questions, concerns, or inquiries, our dedicated team is here to assist you every step of the way.</p>
+    <button class="product_btn" onclick="window.location.href='contact.html'">Contact Us</button>
+    </div>
+    
+  </section>
+  <section class="footer">
+    <div class="footer_box_container">
+      <div class="footer_box">
+        <div class="footer_logo_cont">
+          <img src="book_logo.png" alt="">
+        <a href="home.html" class="book_logo">Bookiee</a>
+  
+        </div>
+        <p><i class="fas fa-phone"></i> 1234567890</p>
+        <p><i class="fas fa-envelope"></i> bookiee@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mumbai, India - 902839</p>
+        <p><i class="fa-solid fa-shop"></i> Shop Timings : 9am - 9pm</p>
+      </div>
+  
+      <div class="footer_box">
+        <h3>Quick Links</h3>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+      </div>
+  
+      <div class="footer_box">
+        <h3>Other Links</h3>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+      </div>
+    </div>
+    <p>Copyright <i class="fa-regular fa-copyright"></i> 2023 <span>Tanisha Amin | All Rights Reserved.</span></p>
+  </section>
+  <script src="https://kit.fontawesome.com/eedbcd0c96.js" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

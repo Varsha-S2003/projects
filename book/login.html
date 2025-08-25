@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+
+
+
+<div class="box login_box">
+    <span class="borderline"></span>
+    <form action="home.html" method="post" onsubmit="return validateLoginForm()">
+      <h2>Login</h2>
+
+      <div class="inputbox">
+          <input type="email" name="email" id="email" required="required" oninput="validateEmail()">
+          <span>Email</span>
+          <i></i>
+      </div>
+      <p class="error" id="emailLoginError"></p>
+
+
+        <div class="inputbox">
+                <input type="password" name="password" id="password" oninput="validatePassword()">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <p class="error" id="passwordLoginError"></p>
+            <script>
+               
+              function validateEmail() {
+                  let email = document.getElementById('email').value;
+                  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                  if (!emailPattern.test(email)) {
+                      document.getElementById('emailLoginError').innerText = 'Enter a valid email address';
+                      return false;
+                  } else {
+                      document.getElementById('emailLoginError').innerText = '';
+                      return true;
+                  }
+              }
+              function validatePassword() {
+                    let password = document.getElementById('password').value;
+                    if (password === '') {
+                        document.getElementById('passwordLoginError').innerText = 'Password is required';
+                        return false;
+                    } else {
+                        document.getElementById('passwordLoginError').innerText = '';
+                        return true;
+                    }
+                }
+                function validateLoginForm() {
+                    let emailIsValid = validateEmail();
+                    let passwordIsValid = validatePassword();
+
+                   
+                    if (!emailIsValid || !passwordIsValid) {
+                        return false; 
+                    }
+                    return true;  
+                }
+            </script>
+
+
+        
+           
+        
+        <div class="links">
+            
+            <a href="register.html">Sign in</a>
+        </div>
+
+        <input type="submit" value="Login" name="submit">
+    </form>
+</div>
+<script src="https://kit.fontawesome.com/eedbcd0c96.js" crossorigin="anonymous"></script>
+</body>
+</html>

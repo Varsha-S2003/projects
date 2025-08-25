@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Form</title>
+
+    <!-- Font awesome Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Css File Link -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<div class="box">
+    <span class="borderline"></span>
+    <form action="login.html" method="post" onsubmit="return validateRegisterForm()">
+        <h2>Registration</h2>
+
+        <div class="inputbox">
+            <input type="text" name="name" id="name" oninput="validateName()">
+            <span>Name</span>
+            <i></i>
+        </div>
+        <p class="error" id="nameError"></p>
+
+
+        <div class="inputbox">
+            <input type="email" name="email" id="email" required="required" oninput="validateEmail()">
+            <span>Email</span>
+            <i></i>
+        </div>
+        <p class="error" id="emailError"></p>
+
+
+       <div class="inputbox">
+                <input type="password" name="password" id="password" oninput="validatePassword()">
+                <span>Password</span>
+                <i></i>
+            </div>
+            <p class="error" id="passwordError"></p>
+
+            <div class="inputbox">
+                <input type="password" name="cpassword" id="cpassword" oninput="validateConfirmPassword()">
+                <span>Confirm Password</span>
+                <i></i>
+            </div>
+            <p class="error" id="cpasswordError"></p>
+
+            <div class="inputbox">
+                <select name="user_type" id="user_type" required="required" oninput="validateUserType()">
+                    <option value="">Select User Type</option>
+                    <option value="user">User</option>
+                </select>
+                <i></i>
+            </div>
+            <p class="error" id="userTypeError"></p>
+        
+        <div class="links">
+            
+            <a href="login.html">Login</a>
+        </div>
+
+
+        <input type="submit" value="Register Now" name="submit">
+    
+    </form>
+    
+</div>
+<script>
+        
+    function validateName() {
+        let name = document.getElementById('name').value;
+        if (name === '') {
+            document.getElementById('nameError').innerText = 'Name is required';
+            return false;
+        } else {
+            document.getElementById('nameError').innerText = '';
+            return true;
+        }
+    }
+
+    function validateEmail() {
+            let email = document.getElementById('email').value;
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById('emailError').innerText = 'Enter a valid email address';
+                return false;
+            } else {
+                document.getElementById('emailError').innerText = '';
+                return true;
+            }
+        }
+
+        function validatePassword() {
+            let password = document.getElementById('password').value;
+            if (password === '') {
+                document.getElementById('passwordError').innerText = 'Password is required';
+                return false;
+            } else {
+                document.getElementById('passwordError').innerText = '';
+                return true;
+            }
+        }
+
+        function validateConfirmPassword() {
+            let password = document.getElementById('password').value;
+            let cpassword = document.getElementById('cpassword').value;
+            if (cpassword !== password) {
+                document.getElementById('cpasswordError').innerText = 'Passwords do not match';
+                return false;
+            } else {
+                document.getElementById('cpasswordError').innerText = '';
+                return true;
+            }
+        }
+
+        function validateUserType() {
+            let userType = document.getElementById('user_type').value;
+            if (userType === '') {
+                document.getElementById('userTypeError').innerText = 'Please select a user type';
+                return false;
+            } else {
+                document.getElementById('userTypeError').innerText = '';
+                return true;
+            }
+        }
+        function validateRegisterForm() {
+            let nameIsValid = validateName();
+            let emailIsValid = validateEmail();
+            let passwordIsValid = validatePassword();
+            let confirmPasswordIsValid = validateConfirmPassword();
+            let userTypeIsValid = validateUserType();
+
+           
+            if (!nameIsValid || !emailIsValid || !passwordIsValid || !confirmPasswordIsValid || !userTypeIsValid) {
+                return false;  
+            }
+            return true; 
+        }
+    </script>
+
+
+<script src="https://kit.fontawesome.com/eedbcd0c96.js" crossorigin="anonymous"></script>
+</body>
+</html>
